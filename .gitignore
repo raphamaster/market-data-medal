@@ -12,3 +12,4 @@ __pycache__/
 /data/
 /docker/mariadb/data/
 /notebooks/.ipynb_checkpoints/
+/configs/
