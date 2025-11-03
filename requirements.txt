@@ -1,0 +1,21 @@
+# Core
+pandas>=2.2
+pyarrow>=16.0.0        # parquet/arrow
+numpy>=1.26
+
+# HTTP e utilidades
+requests>=2.32
+tenacity>=9.0.0        # retries
+python-dateutil>=2.9
+pytz>=2024.1
+tqdm>=4.66
+loguru>=0.7.2
+pydantic>=2.8.0
+python-dotenv>=1.0.1
+
+# SQL
+SQLAlchemy>=2.0
+PyMySQL>=1.1.0
+
+# (opcional) validação e profiles
+frictionless>=5.16.0
