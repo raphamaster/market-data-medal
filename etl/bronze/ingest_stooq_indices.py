@@ -135,6 +135,7 @@ def main():
         raise RuntimeError("Nenhum dado de índices foi coletado (Stooq/Alpha Vantage).")
 
     all_df = pd.concat(frames, ignore_index=True).sort_values(["code","date"])
+    all_df = all_df.drop_duplicates(subset=["code","date"], keep="first")
 
     tag = today_tag()
     save_df(all_df, f"{BRONZE_DIR}/indices_{tag}.parquet")
