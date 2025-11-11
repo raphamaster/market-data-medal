@@ -7,16 +7,22 @@ from .env import START_DATE
 def load_sources_yaml(path="configs/sources.yaml") -> dict:
     with open(path, "r", encoding="utf-8") as f:
         raw = f.read()
-    # substitui ${START_DATE}
-    raw = raw.replace("${START_DATE}", START_DATE)
+    os.environ.setdefault("START_DATE", START_DATE)
+    raw = os.path.expandvars(raw)
     return yaml.safe_load(raw)
 
 def ensure_dirs(*paths):
     for p in paths:
         os.makedirs(p, exist_ok=True)
 
+DEFAULT_UA = "Mozilla/5.0 (X11; Linux x86_64) MarketDataETL/1.0"
+
 def http_get(url: str, headers: dict | None = None, timeout: int = 60) -> bytes:
-    r = requests.get(url, headers=headers, timeout=timeout)
+    # Alguns provedores (ex: Stooq) bloqueiam User-Agent padrão do requests.
+    merged_headers = {"User-Agent": DEFAULT_UA}
+    if headers:
+        merged_headers.update(headers)
+    r = requests.get(url, headers=merged_headers, timeout=timeout)
     r.raise_for_status()
     return r.content
 
