@@ -1,0 +1,167 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1F3A"/>
+      <stop offset="1" stop-color="#102A4C"/>
+    </linearGradient>
+    <linearGradient id="mintline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3DDC97"/>
+      <stop offset="1" stop-color="#2BB67C"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3DDC97" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#3DDC97" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.4" r="0.65">
+      <stop offset="0" stop-color="#3DDC97" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#3DDC97" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- grade sutil -->
+  <g stroke="#FFFFFF" stroke-opacity="0.03">
+    <path d="M0 105H1200 M0 210H1200 M0 315H1200 M0 420H1200 M0 525H1200"/>
+    <path d="M150 0V630 M300 0V630 M450 0V630 M600 0V630 M750 0V630 M900 0V630 M1050 0V630"/>
+  </g>
+
+  <rect x="0" y="0" width="1200" height="6" fill="url(#mintline)"/>
+
+  <!-- ===== PAINEL DE MERCADO (lado direito) ===== -->
+  <g transform="translate(680,90)">
+    <rect x="0" y="0" width="450" height="430" rx="14" fill="#16304F" stroke="#22456E" stroke-width="1.5"/>
+
+    <!-- ticker bar -->
+    <g font-family="Courier, monospace" font-size="13">
+      <text x="22" y="32" fill="#BFD4E6">USD/BRL</text>
+      <text x="100" y="32" fill="#3DDC97">5.28 &#9650;</text>
+      <text x="178" y="32" fill="#BFD4E6">^BVSP</text>
+      <text x="240" y="32" fill="#FF6B6B">157k &#9660;</text>
+      <text x="318" y="32" fill="#BFD4E6">BTC</text>
+      <text x="356" y="32" fill="#3DDC97">531k &#9650;</text>
+    </g>
+    <line x1="14" y1="46" x2="436" y2="46" stroke="#22456E" stroke-width="1"/>
+
+    <!-- gridlines -->
+    <g stroke="#22456E" stroke-width="1" stroke-dasharray="3 6">
+      <line x1="14" y1="110" x2="436" y2="110"/>
+      <line x1="14" y1="180" x2="436" y2="180"/>
+      <line x1="14" y1="250" x2="436" y2="250"/>
+      <line x1="14" y1="320" x2="436" y2="320"/>
+    </g>
+
+    <!-- linha normalizada (=100) ao fundo -->
+    <path d="M24 300 L70 280 L116 292 L162 250 L208 262 L254 220 L300 232 L346 190 L392 175 L426 150"
+          fill="none" stroke="#BFD4E6" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M24 300 L70 280 L116 292 L162 250 L208 262 L254 220 L300 232 L346 190 L392 175 L426 150 L426 360 L24 360 Z"
+          fill="url(#area)"/>
+
+    <!-- candlesticks -->
+    <g>
+      <!-- verde -->
+      <g stroke="#3DDC97" fill="#3DDC97">
+        <line x1="50" y1="250" x2="50" y2="330" stroke-width="2"/>
+        <rect x="42" y="268" width="16" height="44" rx="2"/>
+        <line x1="130" y1="230" x2="130" y2="312" stroke-width="2"/>
+        <rect x="122" y="248" width="16" height="46" rx="2"/>
+        <line x1="250" y1="180" x2="250" y2="270" stroke-width="2"/>
+        <rect x="242" y="200" width="16" height="50" rx="2"/>
+        <line x1="370" y1="130" x2="370" y2="225" stroke-width="2"/>
+        <rect x="362" y="150" width="16" height="55" rx="2"/>
+        <line x1="410" y1="115" x2="410" y2="195" stroke-width="2"/>
+        <rect x="402" y="130" width="16" height="45" rx="2"/>
+      </g>
+      <!-- vermelho -->
+      <g stroke="#FF6B6B" fill="#FF6B6B">
+        <line x1="90" y1="252" x2="90" y2="335" stroke-width="2"/>
+        <rect x="82" y="272" width="16" height="42" rx="2"/>
+        <line x1="170" y1="225" x2="170" y2="305" stroke-width="2"/>
+        <rect x="162" y="243" width="16" height="42" rx="2"/>
+        <line x1="210" y1="215" x2="210" y2="298" stroke-width="2"/>
+        <rect x="202" y="235" width="16" height="42" rx="2"/>
+        <line x1="290" y1="175" x2="290" y2="258" stroke-width="2"/>
+        <rect x="282" y="195" width="16" height="42" rx="2"/>
+        <line x1="330" y1="165" x2="330" y2="245" stroke-width="2"/>
+        <rect x="322" y="183" width="16" height="42" rx="2"/>
+      </g>
+    </g>
+
+    <!-- barras de volume -->
+    <g fill="#3DDC97" fill-opacity="0.25">
+      <rect x="42" y="382" width="16" height="26"/>
+      <rect x="82" y="390" width="16" height="18"/>
+      <rect x="122" y="378" width="16" height="30"/>
+      <rect x="162" y="392" width="16" height="16"/>
+      <rect x="202" y="386" width="16" height="22"/>
+      <rect x="242" y="374" width="16" height="34"/>
+      <rect x="282" y="388" width="16" height="20"/>
+      <rect x="322" y="384" width="16" height="24"/>
+      <rect x="362" y="370" width="16" height="38"/>
+      <rect x="402" y="380" width="16" height="28"/>
+    </g>
+    <line x1="14" y1="408" x2="436" y2="408" stroke="#22456E" stroke-width="1"/>
+  </g>
+
+  <!-- ===== TEXTO (lado esquerdo) ===== -->
+  <rect x="80" y="92" width="172" height="36" rx="18" fill="none" stroke="#3DDC97" stroke-width="1.5"/>
+  <text x="166" y="116" font-family="Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="#3DDC97" text-anchor="middle">MARKET DATA</text>
+
+  <text x="80" y="204" font-family="Helvetica, Arial, sans-serif" font-weight="bold" font-size="54" fill="#FFFFFF">FX &#8226; &#205;ndices &#8226; Cripto</text>
+  <text x="80" y="262" font-family="Helvetica, Arial, sans-serif" font-size="23" fill="#BFD4E6">APIs&#160;&#8594;&#160;MariaDB&#160;&#8594;&#160;Medalh&#227;o&#160;&#8594;&#160;Power BI</text>
+
+  <!-- medallion mini-flow -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="15" transform="translate(80,300)">
+    <circle cx="26" cy="22" r="22" fill="#3E2C1C" stroke="#CD7F32" stroke-width="2"/>
+    <text x="26" y="27" fill="#E8A865" text-anchor="middle" font-weight="bold" font-size="11">Brz</text>
+    <polygon points="74,22 60,15 60,29" fill="#3DDC97"/>
+    <circle cx="120" cy="22" r="22" fill="#2A3540" stroke="#C0C8D0" stroke-width="2"/>
+    <text x="120" y="27" fill="#DDE4EA" text-anchor="middle" font-weight="bold" font-size="11">Slv</text>
+    <polygon points="168,22 154,15 154,29" fill="#3DDC97"/>
+    <circle cx="214" cy="22" r="22" fill="#3D3416" stroke="#E6C24A" stroke-width="2"/>
+    <text x="214" y="27" fill="#F2D878" text-anchor="middle" font-weight="bold" font-size="11">Gld</text>
+    <text x="260" y="27" fill="#8FA8BF" font-size="14">md_bronze &#8594; silver &#8594; gold</text>
+  </g>
+
+  <!-- cards -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <g transform="translate(80,372)">
+      <rect width="248" height="64" rx="10" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.45"/>
+      <text x="16" y="26" font-size="13" fill="#8FA8BF">Moedas (FX)</text>
+      <text x="16" y="50" font-size="17" font-weight="bold" fill="#FFFFFF">USD &#8226; EUR &#8226; GBP / BRL</text>
+    </g>
+    <g transform="translate(344,372)">
+      <rect width="248" height="64" rx="10" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.45"/>
+      <text x="16" y="26" font-size="13" fill="#8FA8BF">&#205;ndices &amp; Cripto</text>
+      <text x="16" y="50" font-size="17" font-weight="bold" fill="#FFFFFF">IBOV &#8226; S&amp;P 500 &#8226; BTC</text>
+    </g>
+    <g transform="translate(80,448)">
+      <rect width="248" height="64" rx="10" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.45"/>
+      <text x="16" y="26" font-size="13" fill="#8FA8BF">An&#225;lise</text>
+      <text x="16" y="50" font-size="17" font-weight="bold" fill="#FFFFFF">Risco &#215; Retorno &#8226; YTD</text>
+    </g>
+    <g transform="translate(344,448)">
+      <rect width="248" height="64" rx="10" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.45"/>
+      <text x="16" y="26" font-size="13" fill="#8FA8BF">M&#233;tricas</text>
+      <text x="16" y="50" font-size="17" font-weight="bold" fill="#FFFFFF">Vol 30d &#8226; Drawdown</text>
+    </g>
+  </g>
+
+  <!-- badges -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="15">
+    <rect x="80" y="538" width="104" height="32" rx="16" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.5"/>
+    <text x="132" y="559" fill="#BFD4E6" text-anchor="middle">Power BI</text>
+    <rect x="196" y="538" width="92" height="32" rx="16" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.5"/>
+    <text x="242" y="559" fill="#BFD4E6" text-anchor="middle">Python</text>
+    <rect x="300" y="538" width="104" height="32" rx="16" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.5"/>
+    <text x="352" y="559" fill="#BFD4E6" text-anchor="middle">MariaDB</text>
+    <rect x="416" y="538" width="92" height="32" rx="16" fill="#16304F" stroke="#3DDC97" stroke-opacity="0.5"/>
+    <text x="462" y="559" fill="#BFD4E6" text-anchor="middle">Docker</text>
+  </g>
+
+  <!-- assinatura -->
+  <text x="1120" y="585" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#3DDC97" text-anchor="end" font-weight="bold">raphaelfranco.com</text>
+
+  <rect x="0" y="624" width="1200" height="6" fill="url(#mintline)"/>
+</svg>
